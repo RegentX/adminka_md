@@ -55,18 +55,13 @@ server {
 }
 EOF"
 
-# Enable the new Nginx site configuration
 sudo ln -s /etc/nginx/sites-available/web_server /etc/nginx/sites-enabled
 sudo rm /etc/nginx/sites-enabled/default
 
-# Test Nginx configuration
 sudo nginx -t
 
-# Restart Nginx
 sudo systemctl restart nginx
 
-# Save command history
 history > commands_history.txt
 
-# Print completion message
 echo "Setup complete. Web server should be running and accessible."
